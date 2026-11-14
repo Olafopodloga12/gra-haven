@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b5jnl6be5acvb"]
+
+[ext_resource type="Texture2D" uid="uid://bcv3q5c1omy4o" path="res://fih hppy .png" id="1_1tnas"]
+[ext_resource type="Script" uid="uid://bmo5xeo4now35" path="res://ryba.gd" id="1_u78rw"]
+[ext_resource type="Texture2D" uid="uid://cw166v8i66q6q" path="res://fih bleh .png" id="3_gmmyk"]
+[ext_resource type="AudioStream" uid="uid://bdoq3cjgeft66" path="res://sound.wav" id="4_56wvy"]
+[ext_resource type="AudioStream" uid="uid://b650nce5qnn42" path="res://bite.wav" id="5_yb2fs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1lwb"]
+radius = 35.014282
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u78rw"]
+atlas = ExtResource("1_1tnas")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmmyk"]
+atlas = ExtResource("1_1tnas")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56wvy"]
+atlas = ExtResource("3_gmmyk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb2fs"]
+atlas = ExtResource("3_gmmyk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1lwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u78rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmmyk")
+}],
+"loop": 1,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56wvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb2fs")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1645637654]
+script = ExtResource("1_u78rw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494256767]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_y1lwb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=861825129]
+sprite_frames = SubResource("SpriteFrames_y1lwb")
+animation = &"alive"
+autoplay = "alive"
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=146881200]
+position = Vector2(2, 24)
+stream = ExtResource("4_56wvy")
+
+[node name="Sound2" type="AudioStreamPlayer2D" parent="." unique_id=1875076154]
+position = Vector2(2, 24)
+stream = ExtResource("5_yb2fs")
+volume_db = -8.149
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://s80sm6mo4jbi"]
+
+[ext_resource type="Texture2D" uid="uid://b8oeacdg7fuev" path="res://el of revnge.png" id="1_lti8b"]
+[ext_resource type="Shader" uid="uid://dcoq04lnw5tva" path="res://menu.gdshader" id="2_ouk20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouk20"]
+atlas = ExtResource("1_lti8b")
+region = Rect2(0, 0, 258, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mae5d"]
+atlas = ExtResource("1_lti8b")
+region = Rect2(258, 0, 258, 258)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1lwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouk20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mae5d")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1lwb"]
+shader = ExtResource("2_ouk20")
+shader_parameter/first_color = Color(0.749, 1, 0.937, 1)
+shader_parameter/second_color = Color(0.569, 0.949, 0.761, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 0.5
+shader_parameter/angle = 0.0
+shader_parameter/balance_speed = 1.0
+shader_parameter/balance_amount = 0.3
+shader_parameter/fade_width = 0.5
+
+[node name="Node2D" type="Node2D" unique_id=1644793217]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1608318966]
+position = Vector2(180, 130)
+sprite_frames = SubResource("SpriteFrames_y1lwb")
+autoplay = "default"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=139620443]
+material = SubResource("ShaderMaterial_y1lwb")
+offset_right = 1152.0
+offset_bottom = 462.0

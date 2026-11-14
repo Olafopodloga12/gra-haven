@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bkaecsoan6a18"]
+
+[ext_resource type="Texture2D" uid="uid://cqo2s1iv0cxnc" path="res://tlo.png" id="1_iffy6"]
+[ext_resource type="Texture2D" uid="uid://36b56thy8mx4" path="res://tlo le nie tlo.png" id="2_nxhn8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ww12"]
+atlas = ExtResource("2_nxhn8")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jhjd"]
+atlas = ExtResource("2_nxhn8")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7wjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ww12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jhjd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2030642434]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=961600577]
+position = Vector2(576, 324)
+texture = ExtResource("1_iffy6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=563495474]
+sprite_frames = SubResource("SpriteFrames_a7wjg")
+autoplay = "default"
+frame = 1
+frame_progress = 0.55051357

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://co3uo707kb4s3"
+path="res://.godot/imported/Citroon Games intro.mp3-f2e4fb4c23dc5184ab17c8ac16063564.mp3str"
+
+[deps]
+
+source_file="res://intro/Citroon Games intro.mp3"
+dest_files=["res://.godot/imported/Citroon Games intro.mp3-f2e4fb4c23dc5184ab17c8ac16063564.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

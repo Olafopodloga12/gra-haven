@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://tq6j0vj3v5yb"]
+
+[ext_resource type="AudioStream" uid="uid://b7uagaxf0hwp5" path="res://Seal of Revenge.wav" id="1_3h6ak"]
+[ext_resource type="Script" uid="uid://bi1wwgybww37g" path="res://music.gd" id="2_5vxup"]
+
+[node name="SealOfRevenge" type="AudioStreamPlayer2D" unique_id=2089313020]
+position = Vector2(-4, 10)
+stream = ExtResource("1_3h6ak")
+volume_db = -14.298
+autoplay = true
+script = ExtResource("2_5vxup")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

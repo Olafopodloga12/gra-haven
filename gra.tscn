@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bkleu1ggjutk7"]
+
+[ext_resource type="Script" uid="uid://bvjmqjssflvdy" path="res://gra.gd" id="1_u3ls2"]
+[ext_resource type="Script" uid="uid://p71h6dsdvvm3" path="res://character_body_2d.gd" id="1_vmmra"]
+[ext_resource type="Texture2D" uid="uid://cia3tgwmfd45j" path="res://pletk.png" id="2_uhg20"]
+[ext_resource type="PackedScene" uid="uid://b5vc05nmn3msv" path="res://foka.tscn" id="3_uhg20"]
+[ext_resource type="PackedScene" uid="uid://bkaecsoan6a18" path="res://tlo.tscn" id="4_oali1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1lwb"]
+size = Vector2(111.5, 201.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oali1"]
+atlas = ExtResource("2_uhg20")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3ls2"]
+atlas = ExtResource("2_uhg20")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7wjg"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oali1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3ls2")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fungv"]
+size = Vector2(437.5, 3902)
+
+[node name="Node2D" type="Node2D" unique_id=870796100]
+script = ExtResource("1_u3ls2")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=755217738 groups=["paletka"]]
+position = Vector2(71, 307)
+motion_mode = 1
+script = ExtResource("1_vmmra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1896636981 groups=["paletka"]]
+position = Vector2(6, -16.125)
+shape = SubResource("RectangleShape2D_y1lwb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1266803924]
+position = Vector2(49, 0)
+sprite_frames = SubResource("SpriteFrames_a7wjg")
+animation = &"new_animation"
+
+[node name="foka" parent="." unique_id=485489085 instance=ExtResource("3_uhg20")]
+position = Vector2(489, 304)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=511113619]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1153240434 groups=["siatka"]]
+position = Vector2(1253, 383)
+shape = SubResource("RectangleShape2D_fungv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=946843769]
+position = Vector2(604, -224)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_fungv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=746598553]
+position = Vector2(591, 868)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_fungv")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1572264506 groups=["ouch"]]
+position = Vector2(-407, 240)
+rotation = -3.1415925
+shape = SubResource("RectangleShape2D_fungv")
+
+[node name="CanvasLayer" parent="." unique_id=2030642434 instance=ExtResource("4_oali1")]
+
+[node name="Timer" type="Timer" parent="." unique_id=544207651]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

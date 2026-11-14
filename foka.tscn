@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b5vc05nmn3msv"]
+
+[ext_resource type="Script" uid="uid://5slpgod22g0c" path="res://foka.gd" id="1_iu4k7"]
+[ext_resource type="Texture2D" uid="uid://b51egxj3uuk7a" path="res://folk fok.png" id="1_vykhk"]
+[ext_resource type="AudioStream" uid="uid://crphje4ultf4e" path="res://eu.wav" id="3_48dly"]
+[ext_resource type="Texture2D" uid="uid://dxvvplxsmlxxp" path="res://Paleta.png" id="4_g343h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1lwb"]
+radius = 65.37584
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu4k7"]
+atlas = ExtResource("1_vykhk")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48dly"]
+atlas = ExtResource("1_vykhk")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vykhk"]
+atlas = ExtResource("1_vykhk")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g343h"]
+atlas = ExtResource("1_vykhk")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g343h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu4k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48dly")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vykhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g343h")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="foka" type="CharacterBody2D" unique_id=485489085]
+script = ExtResource("1_iu4k7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811797188]
+shape = SubResource("CircleShape2D_y1lwb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1447199115]
+sprite_frames = SubResource("SpriteFrames_g343h")
+autoplay = "default"
+frame_progress = 0.9125794
+flip_h = true
+
+[node name="Label" type="Label" parent="." unique_id=1865727859]
+offset_left = -191.0
+offset_top = -134.0
+offset_right = 198.0
+offset_bottom = -56.0
+theme_override_colors/font_color = Color(0, 0, 0.34901962, 1)
+theme_override_colors/font_outline_color = Color(0, 0.050980393, 0.2, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 64
+text = "dih"
+horizontal_alignment = 1
+
+[node name="Eu" type="AudioStreamPlayer2D" parent="." unique_id=1347192124]
+position = Vector2(1, 0)
+stream = ExtResource("3_48dly")
+
+[node name="Paleta" type="Sprite2D" parent="." unique_id=268715124]
+visible = false
+position = Vector2(-219, 23)
+scale = Vector2(50, 50)
+texture = ExtResource("4_g343h")
