@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://divkl4s7sexjq"]
+
+[ext_resource type="Shader" uid="uid://dcoq04lnw5tva" path="res://menu.gdshader" id="1_kf60q"]
+[ext_resource type="Script" uid="uid://c5adbdo8uwl7n" path="res://line_edit.gd" id="2_3ocf1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4oqtm"]
+shader = ExtResource("1_kf60q")
+shader_parameter/first_color = Color(0.749, 1, 0.937, 1)
+shader_parameter/second_color = Color(0.569, 0.949, 0.761, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 0.5
+shader_parameter/angle = 0.0
+shader_parameter/balance_speed = 1.0
+shader_parameter/balance_amount = 0.3
+shader_parameter/fade_width = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ocf1"]
+bg_color = Color(0.5019608, 0.07450981, 0.21568628, 1)
+border_width_left = 50
+border_width_top = 25
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.34901962, 0, 0.20392157, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4oqtm"]
+bg_color = Color(0.5019608, 0.07450981, 0.21568628, 1)
+border_width_left = 50
+border_width_top = 25
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.34901962, 0, 0.20392157, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7767"]
+bg_color = Color(0.5019608, 0.07450981, 0.21568628, 1)
+border_width_left = 50
+border_width_top = 25
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.34901962, 0, 0.20392157, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n6n0"]
+bg_color = Color(0.18039216, 0.07450981, 0.5019608, 1)
+border_width_left = 50
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0, 0.050980393, 0.2, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x77h0"]
+bg_color = Color(0.36078432, 0.8, 0.6901961, 1)
+border_width_left = 50
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.19607843, 0.6509804, 0.6509804, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld6m2"]
+bg_color = Color(0.42352942, 0.19607843, 0.6509804, 1)
+border_width_left = 50
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.18039216, 0.07450981, 0.5019608, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kf60q"]
+bg_color = Color(0.45125002, 0.435, 0.5, 1)
+border_width_left = 50
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.16800001, 0.176, 0.2, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="Node2D" type="Node2D" unique_id=699307156]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1254113463]
+material = SubResource("ShaderMaterial_4oqtm")
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=319835565]
+offset_left = 245.0
+offset_top = 222.0
+offset_right = 929.0
+offset_bottom = 385.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ocf1")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_4oqtm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q7767")
+placeholder_text = "Nick here"
+alignment = 1
+max_length = 15
+script = ExtResource("2_3ocf1")
+
+[node name="Label" type="Label" parent="." unique_id=1989837768]
+offset_left = 28.0
+offset_top = 75.0
+offset_right = 1209.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Type ur nick and press enter to start"
+
+[node name="Button" type="Button" parent="." unique_id=1965150773]
+offset_left = 370.0
+offset_top = 406.0
+offset_right = 803.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_1n6n0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x77h0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ld6m2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kf60q")
+text = "Enter"
+
+[connection signal="pressed" from="Button" to="LineEdit" method="_on_button_pressed"]
