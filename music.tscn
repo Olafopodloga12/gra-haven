@@ -6,7 +6,7 @@
 [node name="SealOfRevenge" type="AudioStreamPlayer2D" unique_id=2089313020]
 position = Vector2(-4, 10)
 stream = ExtResource("1_3h6ak")
-volume_db = -14.298
+volume_db = 5.821
 autoplay = true
 script = ExtResource("2_5vxup")
 

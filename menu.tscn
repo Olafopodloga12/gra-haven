@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://s80sm6mo4jbi"]
 
+[ext_resource type="Script" uid="uid://beso2od5g2p3t" path="res://menu.gd" id="1_4hy44"]
 [ext_resource type="Texture2D" uid="uid://b8oeacdg7fuev" path="res://el of revnge.png" id="1_lti8b"]
 [ext_resource type="Shader" uid="uid://dcoq04lnw5tva" path="res://menu.gdshader" id="2_ouk20"]
+[ext_resource type="Texture2D" uid="uid://dxvvplxsmlxxp" path="res://Paleta.png" id="3_mae5d"]
+[ext_resource type="AudioStream" uid="uid://crphje4ultf4e" path="res://eu.wav" id="5_ytr4m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouk20"]
 atlas = ExtResource("1_lti8b")
@@ -36,7 +39,86 @@ shader_parameter/balance_speed = 1.0
 shader_parameter/balance_amount = 0.3
 shader_parameter/fade_width = 0.5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1lwb"]
+bg_color = Color(0.18039216, 0.07450981, 0.5019608, 1)
+border_width_left = 50
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0, 0.050980393, 0.2, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+bg_color = Color(0.36078432, 0.8, 0.6901961, 1)
+border_width_left = 50
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.19607843, 0.6509804, 0.6509804, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
+bg_color = Color(0.42352942, 0.19607843, 0.6509804, 1)
+border_width_left = 50
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.18039216, 0.07450981, 0.5019608, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fungv"]
+bg_color = Color(0.5019608, 0.07450981, 0.21568628, 1)
+border_width_left = 50
+border_width_top = 25
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.34901962, 0, 0.20392157, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
+bg_color = Color(0.42352942, 0.6509804, 0.19607843, 1)
+border_width_left = 50
+border_width_top = 25
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.18039216, 0.5019608, 0.07450981, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
+bg_color = Color(0.42352942, 0.6509804, 0.19607843, 1)
+border_width_left = 50
+border_width_top = 25
+border_width_right = 50
+border_width_bottom = 25
+border_color = Color(0.18039216, 0.5019608, 0.07450981, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+
 [node name="Node2D" type="Node2D" unique_id=1644793217]
+script = ExtResource("1_4hy44")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1608318966]
 position = Vector2(180, 130)
@@ -46,4 +128,39 @@ autoplay = "default"
 [node name="ColorRect" type="ColorRect" parent="." unique_id=139620443]
 material = SubResource("ShaderMaterial_y1lwb")
 offset_right = 1152.0
-offset_bottom = 462.0
+offset_bottom = 649.0
+
+[node name="Button" type="Button" parent="." unique_id=104238860]
+offset_left = 762.0
+offset_top = 305.0
+offset_right = 1000.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1lwb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ytr4m")
+text = "Play"
+
+[node name="Paleta" type="Sprite2D" parent="." unique_id=83124878]
+visible = false
+position = Vector2(1066, 94)
+scale = Vector2(50, 50)
+texture = ExtResource("3_mae5d")
+
+[node name="HSlider" type="HSlider" parent="." unique_id=957819130]
+offset_left = 722.0
+offset_top = 426.0
+offset_right = 1036.0
+offset_bottom = 526.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_fungv")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_l48gv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_ecwwl")
+
+[node name="Eu" type="AudioStreamPlayer2D" parent="." unique_id=1810533967]
+position = Vector2(1, 0)
+stream = ExtResource("5_ytr4m")
+volume_db = 8.149
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
