@@ -76,6 +76,7 @@ horizontal_alignment = 1
 [node name="Eu" type="AudioStreamPlayer2D" parent="." unique_id=1347192124]
 position = Vector2(1, 0)
 stream = ExtResource("3_48dly")
+volume_db = 8.149
 
 [node name="Paleta" type="Sprite2D" parent="." unique_id=268715124]
 visible = false

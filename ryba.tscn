@@ -65,10 +65,10 @@ autoplay = "alive"
 [node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=146881200]
 position = Vector2(2, 24)
 stream = ExtResource("4_56wvy")
+volume_db = 9.314
 
 [node name="Sound2" type="AudioStreamPlayer2D" parent="." unique_id=1875076154]
 position = Vector2(2, 24)
 stream = ExtResource("5_yb2fs")
-volume_db = -8.149
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
