@@ -5,6 +5,7 @@ extends Node2D
 func _ready():
 	bar.value = db_to_linear(AudioServer.get_bus_volume_db(0))
 	bar.value = 50
+	Music.play()
 
 func _on_h_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(bar.value / 100))
