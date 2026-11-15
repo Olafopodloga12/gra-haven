@@ -2,6 +2,7 @@ extends LineEdit
 
 func _ready():
 	text_changed.connect(check_name)
+	AudioServer.set_bus_volume_db(0, linear_to_db(0.25))
 
 func check_name(new_text):
 	var regex = RegEx.new()
