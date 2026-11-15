@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://chi286oexuty6"]
+
+[ext_resource type="Script" uid="uid://tphhk42j7fw1" path="res://area_2d.gd" id="1_dvwch"]
+[ext_resource type="AudioStream" uid="uid://bdoq3cjgeft66" path="res://sound.wav" id="2_fi5u8"]
+[ext_resource type="AudioStream" uid="uid://b650nce5qnn42" path="res://bite.wav" id="3_0ar2v"]
+[ext_resource type="AudioStream" uid="uid://dk0ibx6cy83fd" path="res://confusuzed.wav" id="4_fi5u8"]
+[ext_resource type="Texture2D" uid="uid://c5x5vuikitewe" path="res://rozgz.png" id="4_ynkmc"]
+[ext_resource type="Texture2D" uid="uid://mu5xn3okbm32" path="res://rozgiz bleh.png" id="5_ktok1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1lwb"]
+radius = 35.014282
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro5ko"]
+atlas = ExtResource("4_ynkmc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou736"]
+atlas = ExtResource("4_ynkmc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frsb1"]
+atlas = ExtResource("5_ktok1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0tmw"]
+atlas = ExtResource("5_ktok1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1lwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro5ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou736")
+}],
+"loop": 1,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frsb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0tmw")
+}],
+"loop": 1,
+"name": &"ded",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1645637654 groups=["fih"]]
+script = ExtResource("1_dvwch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494256767]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_y1lwb")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=146881200]
+position = Vector2(2, 24)
+stream = ExtResource("2_fi5u8")
+volume_db = 9.314
+
+[node name="Sound2" type="AudioStreamPlayer2D" parent="." unique_id=1875076154]
+position = Vector2(2, 24)
+stream = ExtResource("3_0ar2v")
+
+[node name="Sound3" type="AudioStreamPlayer2D" parent="." unique_id=346727118]
+position = Vector2(2, 24)
+stream = ExtResource("4_fi5u8")
+pitch_scale = 2.13
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1566664958]
+sprite_frames = SubResource("SpriteFrames_y1lwb")
+animation = &"ded"
+autoplay = "alive"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

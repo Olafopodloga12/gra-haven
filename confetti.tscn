@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ca4edrulwkc5s"]
+
+[ext_resource type="Shader" uid="uid://bgl2dw2ghke32" path="res://new_shader.gdshader" id="1_0lbn0"]
+[ext_resource type="Script" uid="uid://c01j5qxr3stl0" path="res://confetti.gd" id="1_xnakt"]
+[ext_resource type="AudioStream" uid="uid://bmer1cccv4u0x" path="res://yippe.wav" id="3_ilyld"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1lwb"]
+shader = ExtResource("1_0lbn0")
+shader_parameter/speed = 500.0
+shader_parameter/sway_strength = 200.0
+shader_parameter/sway_speed = 5.0
+shader_parameter/spin_speed = 10.0
+shader_parameter/piece_size = 10.0
+shader_parameter/aspect_ratio = 3.0
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/col0 = Color(1, 0.2, 0.2, 1)
+shader_parameter/col1 = Color(1, 0.75, 0.1, 1)
+shader_parameter/col2 = Color(0.1, 0.8, 0.3, 1)
+shader_parameter/col3 = Color(0.15, 0.55, 1, 1)
+shader_parameter/col4 = Color(0.85, 0.2, 1, 1)
+shader_parameter/col5 = Color(1, 0.4, 0.7, 1)
+shader_parameter/col6 = Color(0.1, 0.9, 0.95, 1)
+shader_parameter/col7 = Color(1, 1, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1492442219]
+script = ExtResource("1_xnakt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1559884890]
+material = SubResource("ShaderMaterial_y1lwb")
+offset_top = -18.0
+offset_right = 1157.0
+offset_bottom = 1009.0
+mouse_filter = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=968760870]
+stream = ExtResource("3_ilyld")

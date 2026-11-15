@@ -92,7 +92,7 @@ shape = SubResource("CircleShape2D_y1lwb")
 sprite_frames = SubResource("SpriteFrames_g343h")
 animation = &"fast"
 autoplay = "normal"
-frame_progress = 0.31811544
+frame_progress = 0.56157136
 flip_h = true
 
 [node name="Label" type="Label" parent="." unique_id=1865727859]
@@ -113,6 +113,7 @@ stream = ExtResource("3_48dly")
 volume_db = 8.149
 
 [node name="Paleta" type="Sprite2D" parent="." unique_id=268715124]
+visible = false
 position = Vector2(-219, 23)
 scale = Vector2(50, 50)
 texture = ExtResource("4_g343h")

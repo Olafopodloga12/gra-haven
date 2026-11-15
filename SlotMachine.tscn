@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dlyigbwn4ks2v" path="res://slotmachine.gd" id="1_2fvob"]
 [ext_resource type="Texture2D" uid="uid://dmh5xxe0pfi2j" path="res://znczki o hzr.png" id="3_f8utl"]
+[ext_resource type="Texture2D" uid="uid://udy5wwwsx5rp" path="res://lop_mchine.png" id="4_f8utl"]
+[ext_resource type="Texture2D" uid="uid://cm0tcoeq0jmlp" path="res://lop_mchine2.png" id="4_vq7nl"]
+[ext_resource type="AudioStream" uid="uid://cna2fmn2ki1mx" path="res://electric-slot-machine.wav" id="5_vq7nl"]
+[ext_resource type="AudioStream" uid="uid://bmer1cccv4u0x" path="res://yippe.wav" id="6_qax5t"]
 
 [sub_resource type="Shader" id="Shader_3qqdm"]
 code = "shader_type canvas_item;
@@ -29,39 +33,94 @@ shader_parameter/tex = ExtResource("3_f8utl")
 shader_parameter/n_rows = 4.0
 shader_parameter/y_offset = 0.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfvrr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_886h6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jtvjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eck0y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_db8xp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mm3bt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v33tu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0jt1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckbw6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eh0ki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lqmh1"]
+
 [node name="Sprite2D" type="Sprite2D" unique_id=843987018]
 script = ExtResource("1_2fvob")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=507555670]
+offset_left = 1008.0
+offset_top = 583.0
+offset_right = 1113.0
+offset_bottom = 623.0
+color = Color(0, 0, 0, 1)
+
 [node name="Slot1" type="ColorRect" parent="." unique_id=1979903764]
 material = SubResource("ShaderMaterial_y1lwb")
-offset_left = 976.0
-offset_top = 548.0
-offset_right = 1008.0
-offset_bottom = 580.0
+offset_left = 1011.0
+offset_top = 589.0
+offset_right = 1043.0
+offset_bottom = 621.0
 
 [node name="Slot2" type="ColorRect" parent="." unique_id=859488762]
 material = SubResource("ShaderMaterial_3qqdm")
-offset_left = 1011.0
-offset_top = 548.0
-offset_right = 1043.0
-offset_bottom = 580.0
+offset_left = 1046.0
+offset_top = 589.0
+offset_right = 1078.0
+offset_bottom = 621.0
 
 [node name="Slot3" type="ColorRect" parent="." unique_id=243351538]
 material = SubResource("ShaderMaterial_y1lwb")
-offset_left = 1046.0
-offset_top = 548.0
-offset_right = 1078.0
-offset_bottom = 580.0
+offset_left = 1081.0
+offset_top = 589.0
+offset_right = 1113.0
+offset_bottom = 621.0
 
 [node name="Button" type="Button" parent="." unique_id=795047497]
-offset_left = 988.0
-offset_top = 591.0
-offset_right = 1059.0
-offset_bottom = 628.0
-text = "spin"
+offset_left = 986.0
+offset_top = 542.0
+offset_right = 1155.0
+offset_bottom = 644.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rfvrr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_886h6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jtvjw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_eck0y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_db8xp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_mm3bt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v33tu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0jt1j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ckbw6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_eh0ki")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lqmh1")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1090331146]
-position = Vector2(1035, 586)
-zoom = Vector2(5, 5)
+[node name="off" type="Sprite2D" parent="." unique_id=1046471837]
+position = Vector2(1228, 590)
+texture = ExtResource("4_f8utl")
 
+[node name="on" type="Sprite2D" parent="." unique_id=132023287]
+visible = false
+position = Vector2(1303, 589)
+texture = ExtResource("4_vq7nl")
+
+[node name="ElectricSlotMachine" type="AudioStreamPlayer2D" parent="." unique_id=672356473]
+position = Vector2(1042, 590)
+stream = ExtResource("5_vq7nl")
+
+[node name="Yippe" type="AudioStreamPlayer2D" parent="." unique_id=1332394094]
+position = Vector2(1061, 592)
+stream = ExtResource("6_qax5t")
+volume_db = 18.179
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

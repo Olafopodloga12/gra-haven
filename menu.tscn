@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bliyv5wdvbpjm" path="res://tlo tlo le tlo.png" id="4_ecwwl"]
 [ext_resource type="Texture2D" uid="uid://dskuokgmx2iqc" path="res://zly fih.png" id="5_l48gv"]
 [ext_resource type="AudioStream" uid="uid://crphje4ultf4e" path="res://eu.wav" id="5_ytr4m"]
+[ext_resource type="PackedScene" uid="uid://b8xl8jd3cyhmp" path="res://SlotMachine.tscn" id="8_kk3ma"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y1lwb"]
 shader = ExtResource("2_ouk20")
@@ -323,6 +324,8 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "0
 "
+
+[node name="Sprite2D" parent="." unique_id=843987018 instance=ExtResource("8_kk3ma")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]

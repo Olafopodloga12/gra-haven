@@ -21,6 +21,7 @@ func _on_body_entered(body: Node2D):
 		return
 	$Sound.play()
 	$Sound2.play()
+	$CollisionShape2D.disabled = true
 	dead = true
 	Score.add()
 	sprite.play("dead")
