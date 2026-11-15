@@ -6,7 +6,7 @@ const SAVE_URL = "https://godot.host736196.xce.pl/gra1miejsceheavenclub/save"
 const GET_URL = "https://godot.host736196.xce.pl/gra1miejsceheavenclub/get"
 const API_KEY = "8c4e64d90b67bd156f316e7a0394c615"
 const GAME_SLUG = "gra1miejsceheavenclub"
-var player_name
+var player_name = ""
 
 # Sygnały dla łatwej obsługi w UI
 signal score_submitted(result)
@@ -45,7 +45,7 @@ func send_score(player_name: String, score: int, metadata: String = "") -> void:
 		emit_signal("request_failed", "Nie udało się nawiązać połączenia HTTP.")
 
 # POBIERANIE WYNIKÓW (Wywołanie: Highscore.get_leaderboard(20))
-func get_leaderboard(limit: int = 50) -> void:
+func get_leaderboard(limit: int = 5) -> void:
 	var http = HTTPRequest.new()
 	add_child(http)
 	http.request_completed.connect(func(result, response_code, headers, body):

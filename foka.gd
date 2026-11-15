@@ -98,6 +98,9 @@ func die_animation():
 	tween.tween_property(sprite, "position", Vector2(0, 1000), 3)
 	await get_tree().create_timer(1).timeout
 	sound(true)
+	await get_tree().create_timer(1).timeout
+	Highscore.send_score(Highscore.player_name,Score.score)
+	get_tree().change_scene_to_file("res://menu.tscn")
 	
 func squash():
 	var tween = create_tween()

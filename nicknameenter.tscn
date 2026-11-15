@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://dcoq04lnw5tva" path="res://menu.gdshader" id="1_kf60q"]
 [ext_resource type="Script" uid="uid://c5adbdo8uwl7n" path="res://line_edit.gd" id="2_3ocf1"]
+[ext_resource type="Texture2D" uid="uid://bliyv5wdvbpjm" path="res://tlo tlo le tlo.png" id="2_4oqtm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4oqtm"]
 shader = ExtResource("1_kf60q")
@@ -13,6 +14,28 @@ shader_parameter/angle = 0.0
 shader_parameter/balance_speed = 1.0
 shader_parameter/balance_amount = 0.3
 shader_parameter/fade_width = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk3ma"]
+atlas = ExtResource("2_4oqtm")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrnbx"]
+atlas = ExtResource("2_4oqtm")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1n6n0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk3ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrnbx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ocf1"]
 bg_color = Color(0.5019608, 0.07450981, 0.21568628, 1)
@@ -108,11 +131,16 @@ material = SubResource("ShaderMaterial_4oqtm")
 offset_right = 1152.0
 offset_bottom = 649.0
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=424389586]
+position = Vector2(576, 324)
+sprite_frames = SubResource("SpriteFrames_1n6n0")
+autoplay = "default"
+
 [node name="LineEdit" type="LineEdit" parent="." unique_id=319835565]
-offset_left = 245.0
-offset_top = 222.0
-offset_right = 929.0
-offset_bottom = 385.0
+offset_left = 403.0
+offset_top = 237.0
+offset_right = 1087.0
+offset_bottom = 400.0
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ocf1")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_4oqtm")
@@ -122,25 +150,26 @@ alignment = 1
 max_length = 15
 script = ExtResource("2_3ocf1")
 
-[node name="Label" type="Label" parent="." unique_id=1989837768]
-offset_left = 28.0
-offset_top = 75.0
-offset_right = 1209.0
-offset_bottom = 226.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-text = "Type ur nick and press enter to start"
-
 [node name="Button" type="Button" parent="." unique_id=1965150773]
-offset_left = 370.0
-offset_top = 406.0
-offset_right = 803.0
-offset_bottom = 528.0
+offset_left = 528.0
+offset_top = 421.0
+offset_right = 961.0
+offset_bottom = 543.0
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_1n6n0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x77h0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ld6m2")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_kf60q")
 text = "Enter"
+
+[node name="Label" type="Label" parent="." unique_id=1989837768]
+offset_left = 372.0
+offset_top = 26.0
+offset_right = 1218.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Type ur nick and press enter to start"
+autowrap_mode = 2
 
 [connection signal="pressed" from="Button" to="LineEdit" method="_on_button_pressed"]

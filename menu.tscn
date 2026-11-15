@@ -4,8 +4,42 @@
 [ext_resource type="Texture2D" uid="uid://b8oeacdg7fuev" path="res://el of revnge.png" id="1_lti8b"]
 [ext_resource type="Shader" uid="uid://dcoq04lnw5tva" path="res://menu.gdshader" id="2_ouk20"]
 [ext_resource type="Texture2D" uid="uid://dxvvplxsmlxxp" path="res://Paleta.png" id="3_mae5d"]
+[ext_resource type="Texture2D" uid="uid://bliyv5wdvbpjm" path="res://tlo tlo le tlo.png" id="4_ecwwl"]
 [ext_resource type="Texture2D" uid="uid://dskuokgmx2iqc" path="res://zly fih.png" id="5_l48gv"]
 [ext_resource type="AudioStream" uid="uid://crphje4ultf4e" path="res://eu.wav" id="5_ytr4m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1lwb"]
+shader = ExtResource("2_ouk20")
+shader_parameter/first_color = Color(0.749, 1, 0.937, 1)
+shader_parameter/second_color = Color(0.569, 0.949, 0.761, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 0.5
+shader_parameter/angle = 0.0
+shader_parameter/balance_speed = 1.0
+shader_parameter/balance_amount = 0.3
+shader_parameter/fade_width = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk3ma"]
+atlas = ExtResource("4_ecwwl")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrnbx"]
+atlas = ExtResource("4_ecwwl")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fungv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk3ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrnbx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouk20"]
 atlas = ExtResource("1_lti8b")
@@ -28,17 +62,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1lwb"]
-shader = ExtResource("2_ouk20")
-shader_parameter/first_color = Color(0.749, 1, 0.937, 1)
-shader_parameter/second_color = Color(0.569, 0.949, 0.761, 1)
-shader_parameter/position = 0.0
-shader_parameter/size = 0.5
-shader_parameter/angle = 0.0
-shader_parameter/balance_speed = 1.0
-shader_parameter/balance_amount = 0.3
-shader_parameter/fade_width = 0.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1lwb"]
 bg_color = Color(0.18039216, 0.07450981, 0.5019608, 1)
@@ -93,7 +116,6 @@ corner_radius_bottom_left = 50
 bg_color = Color(0.42352942, 0.6509804, 0.19607843, 1)
 border_width_left = 50
 border_width_top = 25
-border_width_right = 50
 border_width_bottom = 25
 border_color = Color(0.18039216, 0.5019608, 0.07450981, 1)
 border_blend = true
@@ -104,32 +126,24 @@ corner_radius_bottom_left = 50
 expand_margin_left = 10.0
 expand_margin_right = 6.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
-bg_color = Color(0.42352942, 0.6509804, 0.19607843, 1)
-border_width_left = 50
-border_width_top = 25
-border_width_right = 50
-border_width_bottom = 25
-border_color = Color(0.18039216, 0.5019608, 0.07450981, 1)
-border_blend = true
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-expand_margin_left = 10.0
-
 [node name="Node2D" type="Node2D" unique_id=1644793217]
 script = ExtResource("1_4hy44")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1608318966]
-position = Vector2(180, 130)
-sprite_frames = SubResource("SpriteFrames_y1lwb")
-autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=139620443]
 material = SubResource("ShaderMaterial_y1lwb")
 offset_right = 1152.0
 offset_bottom = 649.0
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=321631562]
+position = Vector2(576, 324)
+sprite_frames = SubResource("SpriteFrames_fungv")
+autoplay = "default"
+frame_progress = 0.22844896
+
+[node name="Logo" type="AnimatedSprite2D" parent="." unique_id=1608318966]
+position = Vector2(892, 146)
+sprite_frames = SubResource("SpriteFrames_y1lwb")
+autoplay = "default"
 
 [node name="Button" type="Button" parent="." unique_id=104238860]
 offset_left = 762.0
@@ -149,22 +163,166 @@ scale = Vector2(50, 50)
 texture = ExtResource("3_mae5d")
 
 [node name="HSlider" type="HSlider" parent="." unique_id=957819130]
-offset_left = 722.0
-offset_top = 426.0
-offset_right = 1036.0
-offset_bottom = 526.0
+offset_left = 694.0
+offset_top = 399.0
+offset_right = 1080.0
+offset_bottom = 549.0
 theme_override_icons/grabber = ExtResource("5_l48gv")
 theme_override_icons/grabber_highlight = ExtResource("5_l48gv")
 theme_override_icons/grabber_disabled = ExtResource("5_l48gv")
 theme_override_icons/tick = ExtResource("5_l48gv")
 theme_override_styles/slider = SubResource("StyleBoxFlat_fungv")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_l48gv")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_ecwwl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_l48gv")
 
 [node name="Eu" type="AudioStreamPlayer2D" parent="." unique_id=1810533967]
 position = Vector2(1, 0)
 stream = ExtResource("5_ytr4m")
 volume_db = 8.149
+
+[node name="Leaderboard" type="Label" parent="." unique_id=40502924]
+offset_left = 343.0
+offset_top = -6.0
+offset_right = 662.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Global Leaderboard:
+"
+horizontal_alignment = 2
+
+[node name="Nick1" type="Label" parent="." unique_id=203823659]
+offset_left = 240.99998
+offset_top = 31.0
+offset_right = 564.1771
+offset_bottom = 112.0
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0.9490196, 0.7607843, 0.5686275, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.47058824, 0.36078432, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "NotTaken
+"
+horizontal_alignment = 2
+
+[node name="Nick2" type="Label" parent="." unique_id=1195093169]
+offset_left = 164.22195
+offset_top = 90.53245
+offset_right = 523.95544
+offset_bottom = 171.53244
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0.5019608, 0.07450981, 0.21568628, 1)
+theme_override_colors/font_outline_color = Color(0.34901962, 0, 0.20392157, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "NotTaken
+"
+horizontal_alignment = 2
+
+[node name="Nick3" type="Label" parent="." unique_id=1308205390]
+offset_left = 74.61647
+offset_top = 155.25964
+offset_right = 484.95618
+offset_bottom = 236.25964
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0.42352942, 0.19607843, 0.6509804, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.07450981, 0.5019608, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "NotTaken
+"
+horizontal_alignment = 2
+
+[node name="Nick4" type="Label" parent="." unique_id=1592654098]
+offset_left = 95.92418
+offset_top = 207.60605
+offset_right = 442.0011
+offset_bottom = 288.60608
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0, 0, 0.34901962, 1)
+theme_override_colors/font_outline_color = Color(0, 0.050980393, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "NotTaken"
+horizontal_alignment = 2
+
+[node name="Nick5" type="Label" parent="." unique_id=425713604]
+offset_left = 151.43665
+offset_top = 256.54413
+offset_right = 539.4447
+offset_bottom = 337.54413
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0, 0, 0.34901962, 1)
+theme_override_colors/font_outline_color = Color(0, 0.050980393, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "NotTaken"
+horizontal_alignment = 2
+
+[node name="Score1" type="Label" parent="." unique_id=1067507507]
+offset_left = 580.0
+offset_top = 34.0
+offset_right = 853.0
+offset_bottom = 115.0
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0.9490196, 0.7607843, 0.5686275, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.47058824, 0.36078432, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+
+[node name="Score2" type="Label" parent="." unique_id=1723616170]
+offset_left = 539.9542
+offset_top = 92.0
+offset_right = 812.9542
+offset_bottom = 173.0
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0.5019608, 0.07450981, 0.21568628, 1)
+theme_override_colors/font_outline_color = Color(0.34901962, 0, 0.20392157, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+
+[node name="Score3" type="Label" parent="." unique_id=165574808]
+offset_left = 500.95416
+offset_top = 157.0
+offset_right = 773.9541
+offset_bottom = 238.0
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0.42352942, 0.19607843, 0.6509804, 1)
+theme_override_colors/font_outline_color = Color(0.18039216, 0.07450981, 0.5019608, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+
+[node name="Score4" type="Label" parent="." unique_id=1689108326]
+offset_left = 458.0
+offset_top = 207.99998
+offset_right = 730.99994
+offset_bottom = 289.0
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0, 0, 0.34901962, 1)
+theme_override_colors/font_outline_color = Color(0, 0.050980393, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+
+[node name="Score5" type="Label" parent="." unique_id=1352755545]
+offset_left = 554.00006
+offset_top = 261.0
+offset_right = 827.00006
+offset_bottom = 342.0
+rotation = 0.005390737
+theme_override_colors/font_color = Color(0, 0, 0.34901962, 1)
+theme_override_colors/font_outline_color = Color(0, 0.050980393, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "0
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
