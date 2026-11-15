@@ -51,9 +51,10 @@ func _on_h_slider_drag_ended(value_changed: bool) -> void:
 
 func _on_button_pressed() -> void:
 	if Score.cutscene_watched:
-		get_tree().change_scene_to_file("res://gra.tscn")
+		await Transition.change_scene("res://gra.tscn")
 	else:
-		get_tree().change_scene_to_file("res://cutcene.tscn")
+		Score.cutscene_watched = true
+		await Transition.change_scene("res://cutcene.tscn")
 
 
 func update_leaderboard(scores):

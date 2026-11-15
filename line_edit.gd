@@ -1,6 +1,7 @@
 extends LineEdit
 
 func _ready():
+	grab_focus()
 	text_changed.connect(check_name)
 	AudioServer.set_bus_volume_db(0, linear_to_db(0.25))
 
@@ -20,4 +21,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	await Transition.change_scene("res://menu.tscn")

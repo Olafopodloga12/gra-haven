@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Music="*uid://tq6j0vj3v5yb"
 Score="*uid://tnb137xwo0w3"
 Highscore="*uid://dcfdhdxrfrm2x"
+Transition="*uid://w63v3kalgkin"
 
 [display]
 

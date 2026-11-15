@@ -36,4 +36,4 @@ func _ready() -> void:
 	$Label.hide()
 	$Piona.play()
 	await get_tree().create_timer(3).timeout
-	get_tree().change_scene_to_file("res://gra.tscn")
+	await Transition.change_scene("res://gra.tscn")

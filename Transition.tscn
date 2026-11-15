@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://w63v3kalgkin"]
+
+[ext_resource type="Script" uid="uid://577needxvfuu" path="res://canvas_layer.gd" id="1_jaa4l"]
+[ext_resource type="Shader" uid="uid://bgl2dw2ghke32" path="res://new_shader.gdshader" id="2_y2wa0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1lwb"]
+shader = ExtResource("2_y2wa0")
+shader_parameter/progress = 0.0
+shader_parameter/cover_color = Color(0, 0, 0, 1)
+shader_parameter/angle = 0.0
+shader_parameter/softness = 0.04
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1223108042]
+script = ExtResource("1_jaa4l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1052628200]
+material = SubResource("ShaderMaterial_y1lwb")
+offset_right = 1154.0
+offset_bottom = 650.0
+mouse_filter = 2

@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://5slpgod22g0c" path="res://foka.gd" id="1_iu4k7"]
 [ext_resource type="Texture2D" uid="uid://b51egxj3uuk7a" path="res://folk fok.png" id="1_vykhk"]
+[ext_resource type="Texture2D" uid="uid://d17o1tryytoi3" path="res://folk fok brum 1 kltk.png" id="2_6gyxq"]
 [ext_resource type="Texture2D" uid="uid://bm11qdr2vmg5j" path="res://folk fok bruuuummmmmmmmmmmmmmmmmmm.png" id="2_wh2d4"]
 [ext_resource type="AudioStream" uid="uid://crphje4ultf4e" path="res://eu.wav" id="3_48dly"]
 [ext_resource type="Texture2D" uid="uid://cs6mthq0dbb32" path="res://fok plkl pkl.png" id="4_6gyxq"]
 [ext_resource type="Texture2D" uid="uid://dxvvplxsmlxxp" path="res://Paleta.png" id="4_g343h"]
-[ext_resource type="Texture2D" uid="uid://ehlejpysnebj" path="res://mnim mnim ppu.png" id="7_6gyxq"]
+
+[sub_resource type="Gradient" id="Gradient_n44kb"]
+colors = PackedColorArray(1, 1, 1, 1, 0.25, 0.8, 1, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1lwb"]
 radius = 65.37584
@@ -74,6 +77,14 @@ animations = [{
 [node name="foka" type="CharacterBody2D" unique_id=485489085]
 script = ExtResource("1_iu4k7")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=108470271]
+position = Vector2(-2, -4)
+amount = 25
+texture = ExtResource("2_6gyxq")
+lifetime = 0.2
+gravity = Vector2(0, 0)
+color_ramp = SubResource("Gradient_n44kb")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811797188]
 shape = SubResource("CircleShape2D_y1lwb")
 
@@ -81,7 +92,7 @@ shape = SubResource("CircleShape2D_y1lwb")
 sprite_frames = SubResource("SpriteFrames_g343h")
 animation = &"fast"
 autoplay = "normal"
-frame_progress = 0.5769855
+frame_progress = 0.31811544
 flip_h = true
 
 [node name="Label" type="Label" parent="." unique_id=1865727859]
@@ -102,12 +113,6 @@ stream = ExtResource("3_48dly")
 volume_db = 8.149
 
 [node name="Paleta" type="Sprite2D" parent="." unique_id=268715124]
-visible = false
 position = Vector2(-219, 23)
 scale = Vector2(50, 50)
 texture = ExtResource("4_g343h")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=108470271]
-visible = false
-position = Vector2(-6, -4)
-texture = ExtResource("7_6gyxq")

@@ -85,10 +85,13 @@ func _physics_process(delta: float) -> void:
 		die_animation()
 		
 	if speed >= 21:
+		$CPUParticles2D.emitting = true
 		sprite.play("fast")
 	elif speed <= 4.5:
+		$CPUParticles2D.emitting = false
 		sprite.play("slow")
 	else:
+		$CPUParticles2D.emitting = false
 		sprite.play("normal")
 
 
@@ -107,7 +110,7 @@ func die_animation():
 	sound(true)
 	await get_tree().create_timer(1).timeout
 	Highscore.send_score(Highscore.player_name,Score.score)
-	get_tree().change_scene_to_file("res://menu.tscn")
+	await Transition.change_scene("res://menu.tscn")
 	
 func squash():
 	var tween = create_tween()
