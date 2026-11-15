@@ -9,6 +9,8 @@ extends Node2D
 @export var spawn_amount := 10
 
 func _ready():
+	Score.score = -1
+	Score.add()
 	Music.play() 
 	for i in range(spawn_amount):
 		spawn_fish()

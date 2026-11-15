@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cy4jlpkcbb72l"]
 
 [ext_resource type="Texture2D" uid="uid://b51egxj3uuk7a" path="res://folk fok.png" id="1_jm7dv"]
+[ext_resource type="Script" uid="uid://dewaqxaydvjw3" path="res://cutcene.gd" id="1_q5ixg"]
 [ext_resource type="Texture2D" uid="uid://ehlejpysnebj" path="res://mnim mnim ppu.png" id="2_4oc8s"]
 [ext_resource type="Texture2D" uid="uid://bq2iu7gawg0ty" path="res://mutny folk.png" id="3_3hk7s"]
 [ext_resource type="Texture2D" uid="uid://dskuokgmx2iqc" path="res://zly fih.png" id="4_4oabs"]
@@ -13,6 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://dblav5fny8ouy" path="res://plz.png" id="9_q5ixg"]
 [ext_resource type="Texture2D" uid="uid://dp53ham12mnqx" path="res://bob-o.png" id="10_rj3h7"]
 [ext_resource type="Texture2D" uid="uid://pg7soniactec" path="res://pluh 67 67.png" id="10_ywpoe"]
+[ext_resource type="AudioStream" uid="uid://c1s17lcth7qt2" path="res://dream.mp3" id="15_ywpoe"]
+[ext_resource type="AudioStream" uid="uid://ddxrbqqb0u5rp" path="res://Am am.mp3" id="16_idf16"]
+[ext_resource type="AudioStream" uid="uid://7sfhfco4gorc" path="res://sadge.mp3" id="17_edd4u"]
+[ext_resource type="AudioStream" uid="uid://cymmiqi2ue248" path="res://thats my chance.mp3" id="18_ndrt1"]
+[ext_resource type="AudioStream" uid="uid://djqiov2vf054i" path="res://wah.mp3" id="19_rj3h7"]
+[ext_resource type="AudioStream" uid="uid://dkmdg7coieceh" path="res://i will help you.mp3" id="20_7kxct"]
+[ext_resource type="AudioStream" uid="uid://vjtcf2dh2bxd" path="res://piona.wav" id="21_1je4i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iu4k7"]
 atlas = ExtResource("1_jm7dv")
@@ -940,6 +948,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D" unique_id=1982506717]
+script = ExtResource("1_q5ixg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2069913797]
 libraries/ = SubResource("AnimationLibrary_uxs50")
@@ -991,3 +1000,53 @@ texture = ExtResource("10_rj3h7")
 visible = false
 position = Vector2(579, 323)
 texture = ExtResource("5_4oabs")
+
+[node name="Dream" type="AudioStreamPlayer2D" parent="." unique_id=2079516454]
+position = Vector2(348, 363)
+stream = ExtResource("15_ywpoe")
+volume_db = 4.656
+pitch_scale = 1.75
+
+[node name="AmAm" type="AudioStreamPlayer2D" parent="." unique_id=58436613]
+position = Vector2(471, 401)
+stream = ExtResource("16_idf16")
+volume_db = 5.045
+
+[node name="Sadge" type="AudioStreamPlayer2D" parent="." unique_id=1798411946]
+position = Vector2(483, 334)
+stream = ExtResource("17_edd4u")
+volume_db = 6.597
+
+[node name="ThatsMyChance" type="AudioStreamPlayer2D" parent="." unique_id=2066057237]
+position = Vector2(554, 310)
+stream = ExtResource("18_ndrt1")
+volume_db = 19.731
+pitch_scale = 0.95
+
+[node name="Wah" type="AudioStreamPlayer2D" parent="." unique_id=1601797967]
+position = Vector2(588, 341)
+stream = ExtResource("19_rj3h7")
+volume_db = 8.477
+
+[node name="IWillHelpYou" type="AudioStreamPlayer2D" parent="." unique_id=698013008]
+position = Vector2(533, 320)
+stream = ExtResource("20_7kxct")
+volume_db = 20.119
+pitch_scale = 0.95
+
+[node name="Piona" type="AudioStreamPlayer2D" parent="." unique_id=1052081836]
+position = Vector2(631, 311)
+stream = ExtResource("21_1je4i")
+volume_db = 15.134
+
+[node name="Label" type="Label" parent="." unique_id=761162742]
+offset_left = 517.0
+offset_top = 27.0
+offset_right = 1113.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 64
+text = "Ill help you"
+horizontal_alignment = 2

@@ -138,7 +138,7 @@ offset_bottom = 649.0
 position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_fungv")
 autoplay = "default"
-frame_progress = 0.22844896
+frame_progress = 0.4041578
 
 [node name="Logo" type="AnimatedSprite2D" parent="." unique_id=1608318966]
 position = Vector2(892, 146)
