@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bkaecsoan6a18" path="res://tlo.tscn" id="4_oali1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1lwb"]
-size = Vector2(111.5, 201.75)
+size = Vector2(111.5, 196)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oali1"]
 atlas = ExtResource("2_uhg20")
@@ -48,7 +48,7 @@ motion_mode = 1
 script = ExtResource("1_vmmra")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1896636981 groups=["paletka"]]
-position = Vector2(6, -16.125)
+position = Vector2(6, -11)
 shape = SubResource("RectangleShape2D_y1lwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1266803924]

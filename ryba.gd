@@ -28,3 +28,7 @@ func _on_body_entered(body: Node2D):
 	var tween = create_tween()
 	tween.tween_property(self, "position:y", position.y + 500, 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	tween.tween_callback(queue_free)
+func spierdalaj():
+	var tween = create_tween()
+	tween.tween_property(self, "position:y", position.y + 500, 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_callback(queue_free)

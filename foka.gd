@@ -83,6 +83,13 @@ func _physics_process(delta: float) -> void:
 	if speed <= min_speed and not is_dead:
 		is_dead = true
 		die_animation()
+		
+	if speed >= 21:
+		sprite.play("fast")
+	elif speed <= 4.5:
+		sprite.play("slow")
+	else:
+		sprite.play("normal")
 
 
 

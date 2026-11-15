@@ -27,6 +27,8 @@ func spawn_fish():
 
 
 func _on_timer_timeout() -> void:
+	for fih in get_tree().get_nodes_in_group("fih"):
+		fih.spierdalaj()
 	for i in range(spawn_amount):
 		spawn_fish()
 	Highscore.send_score(Highscore.player_name,Score.score)
