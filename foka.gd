@@ -85,10 +85,13 @@ func _physics_process(delta: float) -> void:
 		die_animation()
 		
 	if speed >= 21:
+		$CPUParticles2D.emitting = true
 		sprite.play("fast")
 	elif speed <= 4.5:
+		$CPUParticles2D.emitting = false
 		sprite.play("slow")
 	else:
+		$CPUParticles2D.emitting = false
 		sprite.play("normal")
 
 
