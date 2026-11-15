@@ -1,6 +1,67 @@
 [gd_scene format=3 uid="uid://b8xl8jd3cyhmp"]
 
 [ext_resource type="Script" uid="uid://dlyigbwn4ks2v" path="res://slotmachine.gd" id="1_2fvob"]
+[ext_resource type="Texture2D" uid="uid://dmh5xxe0pfi2j" path="res://znczki o hzr.png" id="3_f8utl"]
+
+[sub_resource type="Shader" id="Shader_3qqdm"]
+code = "shader_type canvas_item;
+uniform sampler2D tex: repeat_enable;
+uniform float n_rows = 10;
+uniform float y_offset = 0;
+
+void fragment() {
+	vec2 uv = UV;
+	uv.y /= n_rows;
+	uv.y += y_offset;
+	COLOR.rgb *= texture(tex,uv).rgb;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1lwb"]
+shader = SubResource("Shader_3qqdm")
+shader_parameter/tex = ExtResource("3_f8utl")
+shader_parameter/n_rows = 4.0
+shader_parameter/y_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qqdm"]
+shader = SubResource("Shader_3qqdm")
+shader_parameter/tex = ExtResource("3_f8utl")
+shader_parameter/n_rows = 4.0
+shader_parameter/y_offset = 0.0
 
 [node name="Sprite2D" type="Sprite2D" unique_id=843987018]
 script = ExtResource("1_2fvob")
+
+[node name="Slot1" type="ColorRect" parent="." unique_id=1979903764]
+material = SubResource("ShaderMaterial_y1lwb")
+offset_left = 976.0
+offset_top = 548.0
+offset_right = 1008.0
+offset_bottom = 580.0
+
+[node name="Slot2" type="ColorRect" parent="." unique_id=859488762]
+material = SubResource("ShaderMaterial_3qqdm")
+offset_left = 1011.0
+offset_top = 548.0
+offset_right = 1043.0
+offset_bottom = 580.0
+
+[node name="Slot3" type="ColorRect" parent="." unique_id=243351538]
+material = SubResource("ShaderMaterial_y1lwb")
+offset_left = 1046.0
+offset_top = 548.0
+offset_right = 1078.0
+offset_bottom = 580.0
+
+[node name="Button" type="Button" parent="." unique_id=795047497]
+offset_left = 988.0
+offset_top = 591.0
+offset_right = 1059.0
+offset_bottom = 628.0
+text = "spin"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1090331146]
+position = Vector2(1035, 586)
+zoom = Vector2(5, 5)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
