@@ -138,7 +138,7 @@ offset_bottom = 649.0
 position = Vector2(576, 324)
 sprite_frames = SubResource("SpriteFrames_fungv")
 autoplay = "default"
-frame_progress = 0.49240184
+frame_progress = 0.696152
 
 [node name="Logo" type="AnimatedSprite2D" parent="." unique_id=1608318966]
 position = Vector2(892, 146)
@@ -249,7 +249,7 @@ theme_override_font_sizes/font_size = 32
 text = "NotTaken"
 horizontal_alignment = 2
 
-[node name="score1" type="Label" parent="." unique_id=1067507507]
+[node name="Score1" type="Label" parent="." unique_id=1067507507]
 offset_left = 580.0
 offset_top = 34.0
 offset_right = 853.0
@@ -260,7 +260,7 @@ theme_override_font_sizes/font_size = 32
 text = "0
 "
 
-[node name="score2" type="Label" parent="." unique_id=1723616170]
+[node name="Score2" type="Label" parent="." unique_id=1723616170]
 offset_left = 539.9542
 offset_top = 92.0
 offset_right = 812.9542
@@ -271,7 +271,7 @@ theme_override_font_sizes/font_size = 32
 text = "0
 "
 
-[node name="score3" type="Label" parent="." unique_id=165574808]
+[node name="Score3" type="Label" parent="." unique_id=165574808]
 offset_left = 500.95416
 offset_top = 157.0
 offset_right = 773.9541
@@ -282,7 +282,7 @@ theme_override_font_sizes/font_size = 32
 text = "0
 "
 
-[node name="score4" type="Label" parent="." unique_id=1689108326]
+[node name="Score4" type="Label" parent="." unique_id=1689108326]
 offset_left = 458.0
 offset_top = 207.99998
 offset_right = 730.99994
@@ -293,7 +293,7 @@ theme_override_font_sizes/font_size = 32
 text = "0
 "
 
-[node name="score5" type="Label" parent="." unique_id=1352755545]
+[node name="Score5" type="Label" parent="." unique_id=1352755545]
 offset_left = 554.00006
 offset_top = 261.0
 offset_right = 827.00006
