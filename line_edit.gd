@@ -20,4 +20,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu.tscn")
+	await Transition.change_scene("res://menu.tscn")

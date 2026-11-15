@@ -110,7 +110,7 @@ func die_animation():
 	sound(true)
 	await get_tree().create_timer(1).timeout
 	Highscore.send_score(Highscore.player_name,Score.score)
-	get_tree().change_scene_to_file("res://menu.tscn")
+	await Transition.change_scene("res://menu.tscn")
 	
 func squash():
 	var tween = create_tween()
