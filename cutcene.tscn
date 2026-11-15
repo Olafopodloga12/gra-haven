@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://ehlejpysnebj" path="res://mnim mnim ppu.png" id="2_4oc8s"]
 [ext_resource type="Texture2D" uid="uid://bq2iu7gawg0ty" path="res://mutny folk.png" id="3_3hk7s"]
 [ext_resource type="Texture2D" uid="uid://dskuokgmx2iqc" path="res://zly fih.png" id="4_4oabs"]
+[ext_resource type="Texture2D" uid="uid://cfkuad47p7vwh" path="res://pion.png" id="5_4oabs"]
 [ext_resource type="Texture2D" uid="uid://1j1uferdcowd" path="res://nimtion tlo 2.png" id="5_q5ixg"]
 [ext_resource type="Texture2D" uid="uid://g7jxgvksa04l" path="res://nimtion tlo 3.png" id="6_ywpoe"]
 [ext_resource type="Texture2D" uid="uid://hhs0sreabx34" path="res://nimtion tlo 3,5.png" id="7_idf16"]
-[ext_resource type="Texture2D" uid="uid://3cr3l1mms7bx" path="res://kill me.png" id="8_3hk7s"]
 [ext_resource type="Texture2D" uid="uid://cif3q7gnc126x" path="res://fuck you fih.png" id="8_edd4u"]
-[ext_resource type="Texture2D" uid="uid://wmhqhkt0ipu" path="res://bruhhhhhhhhhh.png" id="9_4oabs"]
 [ext_resource type="Texture2D" uid="uid://dptmc2qk3ohdm" path="res://nimtion cien.png" id="9_ndrt1"]
+[ext_resource type="Texture2D" uid="uid://dblav5fny8ouy" path="res://plz.png" id="9_q5ixg"]
 [ext_resource type="Texture2D" uid="uid://dp53ham12mnqx" path="res://bob-o.png" id="10_rj3h7"]
+[ext_resource type="Texture2D" uid="uid://pg7soniactec" path="res://pluh 67 67.png" id="10_ywpoe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iu4k7"]
 atlas = ExtResource("1_jm7dv")
@@ -288,6 +289,90 @@ tracks/18/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("AnimationPlayer/FuckYouFih:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.11965437, 0.1167463)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("AnimationPlayer/NimtionCien:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("BobO:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(609, 326)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Pion:texture")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_4oabs")]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Pion:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("AnimationPlayer/NimtionCien:flip_h")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("BobO:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_54dg5"]
 resource_name = "new_animation"
@@ -448,6 +533,66 @@ tracks/12/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnimationPlayer/FuckYouFih:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.11965437, 0.1167463)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Pion:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AnimationPlayer/ZlyFih:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("BobO:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 4.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("BobO:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_8cap7"]
 resource_name = "new_animation_2"
@@ -524,10 +669,58 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(3, 3), Vector2(1, 1)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/FuckYouFih:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/ZlyFih:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/NimtionCien:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/NimtionCien:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_553ww"]
 resource_name = "new_animation_3"
-length = 2.4
+length = 3.0666666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -595,10 +788,70 @@ tracks/5/path = NodePath("AnimationPlayer/ZlyFih:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.2666667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.8333334, 2.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/NimtionCien:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/AnimatedSprite2D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/ZlyFih:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/ZlyFih:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/NimtionCien:flip_h")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.0666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_q5ixg"]
@@ -611,10 +864,10 @@ tracks/0/path = NodePath("NimtionTlo1:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.0333),
+"times": PackedFloat32Array(0, 4.05),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("8_3hk7s"), ExtResource("9_4oabs")]
+"values": [ExtResource("9_q5ixg"), ExtResource("10_ywpoe")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -627,6 +880,54 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BobO:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(609, 326)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pion:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.14),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_4oabs")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pion:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BobO:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uxs50"]
@@ -645,7 +946,6 @@ libraries/ = SubResource("AnimationLibrary_uxs50")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer" unique_id=1235162795]
 visible = false
-modulate = Color(1, 1, 1, 0)
 position = Vector2(1286, 552)
 sprite_frames = SubResource("SpriteFrames_1je4i")
 autoplay = "default"
@@ -661,14 +961,17 @@ flip_h = true
 
 [node name="FuckYouFih" type="Sprite2D" parent="AnimationPlayer" unique_id=1212274493]
 visible = false
-position = Vector2(617, 220)
+position = Vector2(625, 252)
+scale = Vector2(-0.11965437, 0.1167463)
 texture = ExtResource("8_edd4u")
 flip_h = true
 
 [node name="NimtionCien" type="Sprite2D" parent="AnimationPlayer" unique_id=1825962382]
+visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(317, 332)
 texture = ExtResource("9_ndrt1")
+flip_h = true
 
 [node name="NimtionTlo1" type="Sprite2D" parent="." unique_id=1322751488]
 position = Vector2(576, 324)
@@ -680,5 +983,11 @@ position = Vector2(371, 336)
 texture = ExtResource("9_ndrt1")
 
 [node name="BobO" type="Sprite2D" parent="." unique_id=186563998]
-position = Vector2(-566, -190)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(609, 326)
 texture = ExtResource("10_rj3h7")
+
+[node name="Pion" type="Sprite2D" parent="." unique_id=1740247647]
+visible = false
+position = Vector2(579, 323)
+texture = ExtResource("5_4oabs")
