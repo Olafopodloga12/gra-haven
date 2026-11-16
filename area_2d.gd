@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-
 var dead = false
 
 func _ready():
@@ -22,10 +21,9 @@ func _ready():
 	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
-func _on_body_entered(body: Node2D):
+func _on_body_entered(body: CharacterBody2D):
 	if dead:
 		return
-
 	$Sound.play()
 	$Sound2.play()
 	$Sound3.pitch_scale = randf_range(2,3)
@@ -34,16 +32,21 @@ func _on_body_entered(body: Node2D):
 	$CollisionShape2D.disabled = true
 
 	# Efekt gwiazdki
-	body.speed *= 1.25
-	body.velocity *= -1
-	body.velocity = body.velocity.normalized() * body.speed
+	body.speed *= 1.15
+
+	var angle = randf_range(-PI * 0.4, PI * 0.4)
+
+	if randf() > 0.5:
+		angle += PI
+
+	body.velocity = Vector2.RIGHT.rotated(angle) * body.speed
 
 	Score.add()
 
-	sprite.play("dead")
+	sprite.play("ded")
 
 	var tween = create_tween()
-	tween.tween_property(self, "position:y", position.y + 500, 0.7)
+	tween.tween_property(self, "position:y", position.y + 500, 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	tween.tween_callback(queue_free)
 
 

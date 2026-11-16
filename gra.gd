@@ -12,7 +12,6 @@ extends Node2D
 func _ready():
 	Score.score = -1
 	Score.add()
-	Music.play()
 
 	for i in range(spawn_amount):
 		spawn_fish()

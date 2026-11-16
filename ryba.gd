@@ -16,12 +16,12 @@ func _ready():
 	tween.tween_property(self, "position", target_position, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
-func _on_body_entered(body: Node2D):
+func _on_body_entered(body: CharacterBody2D):
+	$CollisionShape2D.disabled = true
 	if dead:
 		return
 	$Sound.play()
 	$Sound2.play()
-	$CollisionShape2D.disabled = true
 	dead = true
 	Score.add()
 	sprite.play("dead")

@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://o6w11id12auv"]
+
+[ext_resource type="Script" uid="uid://8247boti266t" path="res://cutscene.gd" id="1_53jq0"]
+[ext_resource type="Shader" uid="uid://dcoq04lnw5tva" path="res://menu.gdshader" id="1_p30sb"]
+[ext_resource type="Texture2D" uid="uid://bliyv5wdvbpjm" path="res://tlo tlo le tlo.png" id="2_53jq0"]
+[ext_resource type="Texture2D" uid="uid://b5hpdmh21nxxm" path="res://comic1.png" id="3_3q24f"]
+[ext_resource type="Texture2D" uid="uid://1va4vtbmjp34" path="res://comic2.png" id="4_8ye5a"]
+[ext_resource type="Texture2D" uid="uid://baapo6yfrnxav" path="res://comic3.png" id="5_qcoa3"]
+[ext_resource type="Texture2D" uid="uid://b3jfl8wretf8l" path="res://comic4.png" id="6_pvbl2"]
+[ext_resource type="AudioStream" uid="uid://c1s17lcth7qt2" path="res://dream.mp3" id="8_ed5nn"]
+[ext_resource type="AudioStream" uid="uid://crphje4ultf4e" path="res://eu.wav" id="9_ed5nn"]
+[ext_resource type="AudioStream" uid="uid://7sfhfco4gorc" path="res://sadge.mp3" id="10_l2u6u"]
+[ext_resource type="AudioStream" uid="uid://cymmiqi2ue248" path="res://thats my chance.mp3" id="11_pby01"]
+[ext_resource type="AudioStream" uid="uid://djqiov2vf054i" path="res://wah.mp3" id="12_jyjru"]
+[ext_resource type="AudioStream" uid="uid://dkmdg7coieceh" path="res://i will help you.mp3" id="13_3v3wj"]
+[ext_resource type="AudioStream" uid="uid://vjtcf2dh2bxd" path="res://piona.wav" id="14_jad71"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vi1t0"]
+shader = ExtResource("1_p30sb")
+shader_parameter/first_color = Color(0.749, 1, 0.937, 1)
+shader_parameter/second_color = Color(0.569, 0.949, 0.761, 1)
+shader_parameter/position = 0.0
+shader_parameter/size = 0.5
+shader_parameter/angle = 0.0
+shader_parameter/balance_speed = 1.0
+shader_parameter/balance_amount = 0.3
+shader_parameter/fade_width = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk3ma"]
+atlas = ExtResource("2_53jq0")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrnbx"]
+atlas = ExtResource("2_53jq0")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1titf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk3ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrnbx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1506995556]
+script = ExtResource("1_53jq0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1416538997]
+material = SubResource("ShaderMaterial_vi1t0")
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1553312365]
+position = Vector2(576, 324)
+sprite_frames = SubResource("SpriteFrames_1titf")
+autoplay = "default"
+
+[node name="slide1" type="Sprite2D" parent="." unique_id=1037246414]
+position = Vector2(576, 324)
+texture = ExtResource("3_3q24f")
+
+[node name="slide2" type="Sprite2D" parent="." unique_id=1716241729]
+position = Vector2(576, 324)
+texture = ExtResource("4_8ye5a")
+
+[node name="slide3" type="Sprite2D" parent="." unique_id=1766151977]
+position = Vector2(576, 324)
+texture = ExtResource("5_qcoa3")
+
+[node name="slide4" type="Sprite2D" parent="." unique_id=1051795408]
+position = Vector2(576, 324)
+texture = ExtResource("6_pvbl2")
+
+[node name="Dream" type="AudioStreamPlayer2D" parent="." unique_id=1983301059]
+position = Vector2(348, 363)
+stream = ExtResource("8_ed5nn")
+volume_db = 4.656
+pitch_scale = 1.75
+
+[node name="AmAm" type="AudioStreamPlayer2D" parent="." unique_id=1656408830]
+position = Vector2(471, 401)
+stream = ExtResource("9_ed5nn")
+volume_db = 5.045
+
+[node name="Sadge" type="AudioStreamPlayer2D" parent="." unique_id=456426188]
+position = Vector2(483, 334)
+stream = ExtResource("10_l2u6u")
+volume_db = 6.597
+
+[node name="ThatsMyChance" type="AudioStreamPlayer2D" parent="." unique_id=825890037]
+position = Vector2(554, 310)
+stream = ExtResource("11_pby01")
+volume_db = 19.731
+pitch_scale = 0.95
+
+[node name="Wah" type="AudioStreamPlayer2D" parent="." unique_id=299219115]
+position = Vector2(588, 341)
+stream = ExtResource("12_jyjru")
+volume_db = 8.477
+
+[node name="IWillHelpYou" type="AudioStreamPlayer2D" parent="." unique_id=1860879891]
+position = Vector2(533, 320)
+stream = ExtResource("13_3v3wj")
+volume_db = 20.119
+pitch_scale = 0.95
+
+[node name="Piona" type="AudioStreamPlayer2D" parent="." unique_id=1651213715]
+position = Vector2(631, 311)
+stream = ExtResource("14_jad71")
+volume_db = 3.47
+pitch_scale = 1.6

@@ -74,7 +74,8 @@ pitch_scale = 2.13
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1566664958]
 sprite_frames = SubResource("SpriteFrames_y1lwb")
-animation = &"ded"
+animation = &"alive"
 autoplay = "alive"
+frame_progress = 0.59126866
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

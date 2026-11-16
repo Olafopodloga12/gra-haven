@@ -17,7 +17,7 @@ extends Node2D
 
 func _ready():
 	bar.value = db_to_linear(AudioServer.get_bus_volume_db(0))
-	bar.value = 25
+	bar.value = Score.volum
 	Music.play()
 
 	var tween = create_tween().set_loops().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT_IN)
@@ -31,6 +31,7 @@ func _ready():
 
 func _on_h_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(bar.value / 100))
+	Score.volum = bar.value
 
 
 func sound():
@@ -54,7 +55,7 @@ func _on_button_pressed() -> void:
 		await Transition.change_scene("res://gra.tscn")
 	else:
 		Score.cutscene_watched = true
-		await Transition.change_scene("res://cutcene.tscn")
+		await Transition.change_scene("res://cutscene.tscn")
 
 
 func update_leaderboard(scores):
